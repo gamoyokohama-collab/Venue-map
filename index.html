@@ -187,9 +187,9 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">TOHOKU · 2026</div>
+    <div class="hero-eyebrow">KANAGAWA · 2026</div>
     <h1 class="hero-title">BEAUTY<br><span>COLLECTION</span> 2026</h1>
-    <p class="hero-desc">東北ビューティーコレクション 出展メーカー案内</p>
+    <p class="hero-desc">ビューティーコレクション 出展メーカー案内</p>
     <div class="hero-pills">
       <div class="hero-pill"><span class="hero-pill-num">74</span><span class="hero-pill-label">出展社数</span></div>
       <div class="hero-pill"><span class="hero-pill-num">9</span><span class="hero-pill-label">エリア</span></div>
@@ -385,15 +385,15 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
 
   <div class="filter-wrap">
     <button class="filter-btn active" data-area="all">ALL（74社）</button>
-    <button class="filter-btn" data-area="A">A — ロビー周辺</button>
-    <button class="filter-btn" data-area="B">B — カラー・ケア</button>
-    <button class="filter-btn" data-area="C">C — カラー・ケア</button>
-    <button class="filter-btn" data-area="D">D — コスメ・美容</button>
-    <button class="filter-btn" data-area="E">E — ヘアケア</button>
-    <button class="filter-btn" data-area="F">F — トリートメント</button>
-    <button class="filter-btn" data-area="G">G — スキンケア</button>
-    <button class="filter-btn" data-area="H">H — 器具・シザー</button>
-    <button class="filter-btn" data-area="I">I — 機器・デバイス</button>
+    <button class="filter-btn" data-area="A">Aエリア</button>
+    <button class="filter-btn" data-area="B">Bエリア</button>
+    <button class="filter-btn" data-area="C">Cエリア</button>
+    <button class="filter-btn" data-area="D">Dエリア</button>
+    <button class="filter-btn" data-area="E">Eエリア</button>
+    <button class="filter-btn" data-area="F">Fエリア</button>
+    <button class="filter-btn" data-area="G">Gエリア</button>
+    <button class="filter-btn" data-area="H">Hエリア</button>
+    <button class="filter-btn" data-area="I">Iエリア</button>
   </div>
   <div class="filter-status" id="filterStatus">全74社を表示中</div>
   <div class="card-grid" id="cardGrid"></div>
@@ -401,8 +401,8 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
 
 <footer>
   <strong>BEAUTY COLLECTION 2026</strong><br>
-  東北ビューティーコレクション｜出展メーカー案内ページ<br>
-  ©2026 ガモウ 販売促進部
+  ビューティーコレクション｜出展メーカー案内ページ<br>
+  ©2026 beauty Collection実行委員会
 </footer>
 
 <script>
@@ -414,7 +414,7 @@ const makers = [
   {area:"A",name:"滝川株式会社",logo:"TAKIGAWA",copy:"体験型",url:"https://takigawa.co.jp/"},
   {area:"A",name:"エステシモ",logo:"ESTESSiMO",copy:"違いは、一度でわかる。\n『ESTESSiMO』が導く、リピートされ続ける最上級ヘッドスパ提案。",url:"https://www.estessimo.jp/"},
   {area:"A",name:"株式会社soeasy",logo:"soeasy",copy:"育成スピードの倍速化、技術の向上を実現。新人育成、組織づくりの課題をスマホで解決",url:"https://www.soeasy.co.jp/"},
-  {area:"A",name:"ガモウ販売促進部（オラプレックス・オリオセタ）",logo:"GAMO",copy:"後日提出",url:"https://www.gamo.co.jp/"},
+  {area:"A",name:"ガモウ販売促進部（オラプレックス・オリオセタ）",logo:"GAMO",copy:url:"https://www.gamo.co.jp/"},
   {area:"A",name:"ダイソン",logo:"dyson",copy:"4月発売の新製品スーパーソニック トラベルをご紹介します！",url:"https://www.dyson.co.jp/ja"},
   {area:"A",name:"AVEDA",logo:"AVEDA",copy:"自然界由来96%のアヴェダカラー",url:"https://www.aveda.jp/"},
   {area:"A",name:"（株）菊星",logo:"菊星",copy:"業務用品をはじめ、ドリンクの試飲もやっております！",url:"https://www.kikuboshi.co.jp/"},
@@ -493,7 +493,7 @@ const makers = [
   {area:"I",name:"YA-MAN",logo:"YA-MAN",copy:"美のプロフェッショナルとともに、あなたの美を叶える。",url:"https://www.ya-man-tokyo-japan.com/"},
 ];
 
-const areaNames = {A:'ロビー周辺',B:'カラー・ケア',C:'カラー・ケア',D:'コスメ・美容',E:'ヘアケア',F:'トリートメント',G:'スキンケア',H:'器具・シザー',I:'機器・デバイス'};
+const areaNames = {A:'',B:'',C:'',D:'',E:'',F:'',G:'',H:'',I:''};
 
 /* ══ カード生成 ══ */
 function buildCards(){
@@ -516,7 +516,7 @@ function buildCards(){
         '<div class="card-chevron">▾</div>' +
       '</div>' +
       '<div class="card-body">' +
-        (hasCopy ? '<div class="card-copy">' + m.copy + '</div>' : '<p class="card-no-info">アピールポイントは後日公開予定です</p>') +
+        (hasCopy ? '<div class="card-copy">' + m.copy + '</div>' : '<p class="card-no-info"></p>') +
         (hasURL  ? '<a class="card-link" href="' + m.url + '" target="_blank" rel="noopener noreferrer">メーカーHP</a>' : '') +
       '</div>';
 
