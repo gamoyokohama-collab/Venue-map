@@ -7,81 +7,233 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --pink:#ff4d8d; --pink-pale:#fff0f5;
-  --purple:#8b5cf6;
-  --gold:#f5a623; --gold-dark:#d4840a;
-  --teal:#0d9488;
-  --sky:#0284c7;
-  --mint:#00c9a7;
-  --rose:#e11d48;
-  --amber:#d97706;
-  --indigo:#4338ca;
-  --white:#ffffff; --off-white:#faf7ff;
-  --text:#1e1b4b; --text-mid:#4b5563;
-
-  --clr-A:#f5a623; --clr-A-bg:#fff8e6; --clr-A-dk:#92400e;
-  --clr-B:#ff4d8d; --clr-B-bg:#fff0f5; --clr-B-dk:#9d174d;
-  --clr-C:#8b5cf6; --clr-C-bg:#f3f0ff; --clr-C-dk:#5b21b6;
-  --clr-D:#0d9488; --clr-D-bg:#f0fdfa; --clr-D-dk:#0f766e;
-  --clr-E:#0284c7; --clr-E-bg:#f0f9ff; --clr-E-dk:#0369a1;
-  --clr-F:#00c9a7; --clr-F-bg:#f0fdfb; --clr-F-dk:#047857;
-  --clr-G:#e11d48; --clr-G-bg:#fff1f3; --clr-G-dk:#be123c;
-  --clr-H:#d97706; --clr-H-bg:#fffbeb; --clr-H-dk:#b45309;
-  --clr-I:#4338ca; --clr-I-bg:#eef2ff; --clr-I-dk:#3730a3;
+  --clr-A:#e8a020; --clr-A-bg:#fff8e6; --clr-A-dk:#7a4f00; --clr-A-border:#c47f00;
+  --clr-B:#e03070; --clr-B-bg:#fff0f5; --clr-B-dk:#8b0040; --clr-B-border:#c0185a;
+  --clr-C:#7a4fc0; --clr-C-bg:#f5f0ff; --clr-C-dk:#4a1f90; --clr-C-border:#6030a8;
+  --clr-D:#0d8080; --clr-D-bg:#f0fdfa; --clr-D-dk:#055050; --clr-D-border:#0a6060;
+  --clr-E:#1a7a30; --clr-E-bg:#f0fdf4; --clr-E-dk:#0a4a1a; --clr-E-border:#156028;
+  --clr-F:#6a3aa0; --clr-F-bg:#f8f0ff; --clr-F-dk:#3a1070; --clr-F-border:#522890;
+  --clr-G:#c0301a; --clr-G-bg:#fff5f0; --clr-G-dk:#801010; --clr-G-border:#a02010;
+  --clr-H:#b05010; --clr-H-bg:#fff8f0; --clr-H-dk:#703010; --clr-H-border:#903a08;
+  --clr-I:#c03060; --clr-I-bg:#fff0f5; --clr-I-dk:#801040; --clr-I-border:#a01848;
+ 
+  --text:#1a1a2e;
+  --text-mid:#4a5068;
+  --off-white:#f8f7ff;
+  --white:#ffffff;
 }
+ 
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden;}
-
+body{font-family:'Noto Sans JP',sans-serif;background:var(--off-white);color:var(--text);overflow-x:hidden;-webkit-text-size-adjust:100%;}
+ 
 /* ── HERO ── */
-.hero{background:linear-gradient(135deg,#1e1b4b 0%,#3730a3 40%,#6d28d9 70%,#9d174d 100%);padding:56px 20px 48px;text-align:center;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(255,77,141,.25) 0%,transparent 60%),radial-gradient(ellipse at 75% 25%,rgba(139,92,246,.2) 0%,transparent 50%);}
+.hero{
+  background:linear-gradient(150deg,#0f0c29 0%,#1e1060 40%,#302b63 70%,#24243e 100%);
+  padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 25% 60%,rgba(224,48,112,.22) 0%,transparent 55%),
+             radial-gradient(ellipse at 78% 20%,rgba(122,79,192,.20) 0%,transparent 50%);
+  pointer-events:none;
+}
 .hero-inner{position:relative;z-index:1;}
-.hero-eyebrow{font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.35em;color:rgba(255,255,255,.55);margin-bottom:10px;}
-.hero-title{font-family:'Oswald',sans-serif;font-size:clamp(1.9rem,6vw,3.4rem);font-weight:700;color:#fff;letter-spacing:.06em;text-shadow:0 0 40px rgba(255,77,141,.45);margin-bottom:14px;}
-.hero-title span{background:linear-gradient(90deg,#ff8db8,#c4b5fd,#6ee7d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-desc{color:rgba(255,255,255,.75);font-size:.85rem;line-height:1.9;}
-.hero-pills{display:inline-flex;gap:28px;margin-top:22px;background:rgba(255,255,255,.1);border-radius:50px;padding:10px 32px;border:1px solid rgba(255,255,255,.15);}
-.hero-pill{text-align:center;}
-.hero-pill-num{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;display:block;}
-.hero-pill-label{font-size:.62rem;color:rgba(255,255,255,.55);}
-
+.hero-eyebrow{
+  font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.4em;
+  color:rgba(255,255,255,.5);margin-bottom:12px;
+}
+.hero-title{
+  font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,8vw,3.8rem);
+  font-weight:700;color:#fff;letter-spacing:.05em;margin-bottom:16px;
+  text-shadow:0 0 50px rgba(224,48,112,.4);
+}
+.hero-title span{
+  background:linear-gradient(90deg,#ff8db8,#c4b5fd,#6ee7d4);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-desc{color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.8;margin-bottom:20px;}
+.hero-pills{
+  display:inline-flex;gap:32px;background:rgba(255,255,255,.1);
+  border-radius:50px;padding:12px 36px;border:1px solid rgba(255,255,255,.15);
+}
+.hero-pill-num{
+  font-family:'Oswald',sans-serif;font-size:1.8rem;font-weight:700;color:#fff;display:block;
+}
+.hero-pill-label{font-size:.72rem;color:rgba(255,255,255,.5);}
+ 
 /* ── NAV ── */
-nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,var(--pink),var(--purple),var(--mint)) 1;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;}
-.nav-logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;background:linear-gradient(90deg,var(--pink),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-links{display:flex;gap:6px;list-style:none;}
-.nav-links a{font-size:.68rem;font-family:'Oswald',sans-serif;font-weight:600;text-decoration:none;color:var(--text-mid);padding:5px 10px;border-radius:20px;transition:.2s;}
-.nav-links a:hover{background:var(--pink-pale);color:var(--pink);}
-@media(max-width:480px){.nav-links{display:none;}}
-
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
+  border-bottom:3px solid transparent;
+  border-image:linear-gradient(90deg,var(--clr-B),var(--clr-C),var(--clr-D)) 1;
+  padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:54px;
+}
+.nav-logo{
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;
+  background:linear-gradient(90deg,var(--clr-B),var(--clr-C));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-links a{
+  font-size:.78rem;font-family:'Oswald',sans-serif;font-weight:600;
+  text-decoration:none;color:var(--text-mid);padding:6px 12px;
+  border-radius:20px;transition:.2s;
+}
+.nav-links a:hover{background:var(--clr-B-bg);color:var(--clr-B);}
+@media(max-width:440px){.nav-links{display:none;}}
+ 
 /* ── SECTION COMMON ── */
-section{padding:50px 16px;}
+section{padding:48px 16px;}
 .sec-header{text-align:center;margin-bottom:32px;}
-.sec-eyebrow{font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.3em;color:var(--pink);font-weight:600;margin-bottom:6px;}
-.sec-title{font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;color:var(--text);margin-bottom:8px;}
-.rainbow-line{width:60px;height:3px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--mint));margin:10px auto;border-radius:100px;}
-.sec-desc{font-size:.78rem;color:var(--text-mid);}
-
-/* ── FLOOR MAP ── */
+.sec-eyebrow{
+  font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.35em;
+  color:var(--clr-B);font-weight:600;margin-bottom:8px;
+}
+.sec-title{
+  font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,5vw,2.2rem);
+  font-weight:700;color:var(--text);margin-bottom:10px;
+}
+.rainbow-line{
+  width:64px;height:3px;
+  background:linear-gradient(90deg,var(--clr-B),var(--clr-C),var(--clr-D));
+  margin:10px auto;border-radius:100px;
+}
+.sec-desc{font-size:.88rem;color:var(--text-mid);line-height:1.7;}
+ 
+/* ══════════════════════════════════════
+   FLOOR MAP（実際の図面準拠）
+   ══════════════════════════════════════ */
 #floormap{background:#fff;}
-.map-wrap{max-width:860px;margin:0 auto;}
-.map-hint{text-align:center;font-size:.73rem;color:var(--text-mid);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:6px;}
-.map-hint::before{content:'👆';}
-.map-svg-box{background:linear-gradient(160deg,#1a1036 0%,#0f1f3d 100%);border-radius:20px;padding:20px 16px 24px;box-shadow:0 16px 60px rgba(0,0,0,.25);position:relative;overflow:hidden;}
-.map-svg-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(255,77,141,.12) 0%,transparent 55%),radial-gradient(ellipse at 80% 10%,rgba(139,92,246,.12) 0%,transparent 50%);pointer-events:none;}
-.venue-svg{width:100%;height:auto;display:block;position:relative;z-index:1;}
-
-.area-cell{cursor:pointer;}
-.area-cell .area-fill{transition:opacity .2s;}
-.area-cell:hover .area-fill{opacity:.85;}
-.area-cell.active .area-fill{filter:brightness(1.25) saturate(1.2);}
-.area-cell.active .area-border{stroke-width:2.5 !important;opacity:1 !important;}
-
+.map-outer{max-width:960px;margin:0 auto;}
+.map-hint{
+  text-align:center;font-size:.82rem;color:var(--text-mid);
+  margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:6px;
+}
+ 
+/* マップ本体 */
+.venue-map{
+  background:linear-gradient(160deg,#141028 0%,#0e1a38 100%);
+  border-radius:20px;padding:20px 16px 20px;
+  box-shadow:0 20px 70px rgba(0,0,0,.28);
+  position:relative;overflow:hidden;
+}
+.venue-map::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 15% 80%,rgba(224,48,112,.08) 0%,transparent 50%),
+             radial-gradient(ellipse at 85% 15%,rgba(122,79,192,.08) 0%,transparent 50%);
+}
+ 
+/* 各エリアブロック */
+.map-row{display:flex;gap:8px;margin-bottom:8px;}
+.map-row:last-child{margin-bottom:0;}
+ 
+.map-area{
+  border-radius:10px;padding:10px 12px;cursor:pointer;
+  border:1.5px solid rgba(255,255,255,.15);
+  transition:all .22s ease;position:relative;overflow:hidden;
+  flex:1;min-width:0;
+}
+.map-area::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:10px 10px 0 0;opacity:.7;
+}
+.map-area:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,0,0,.3);}
+.map-area.active{transform:translateY(-1px);}
+ 
+/* エリア別カラー */
+.map-area[data-area="A"]{background:rgba(232,160,32,.14);border-color:rgba(232,160,32,.45);}
+.map-area[data-area="A"]::before{background:var(--clr-A);}
+.map-area[data-area="A"].active{background:rgba(232,160,32,.28);border-color:var(--clr-A);box-shadow:0 0 18px rgba(232,160,32,.3);}
+.map-area[data-area="B"]{background:rgba(224,48,112,.14);border-color:rgba(224,48,112,.45);}
+.map-area[data-area="B"]::before{background:var(--clr-B);}
+.map-area[data-area="B"].active{background:rgba(224,48,112,.28);border-color:var(--clr-B);box-shadow:0 0 18px rgba(224,48,112,.3);}
+.map-area[data-area="C"]{background:rgba(122,79,192,.14);border-color:rgba(122,79,192,.45);}
+.map-area[data-area="C"]::before{background:var(--clr-C);}
+.map-area[data-area="C"].active{background:rgba(122,79,192,.28);border-color:var(--clr-C);box-shadow:0 0 18px rgba(122,79,192,.3);}
+.map-area[data-area="D"]{background:rgba(13,128,128,.14);border-color:rgba(13,128,128,.45);}
+.map-area[data-area="D"]::before{background:var(--clr-D);}
+.map-area[data-area="D"].active{background:rgba(13,128,128,.28);border-color:var(--clr-D);box-shadow:0 0 18px rgba(13,128,128,.3);}
+.map-area[data-area="E"]{background:rgba(26,122,48,.14);border-color:rgba(26,122,48,.45);}
+.map-area[data-area="E"]::before{background:var(--clr-E);}
+.map-area[data-area="E"].active{background:rgba(26,122,48,.28);border-color:var(--clr-E);box-shadow:0 0 18px rgba(26,122,48,.3);}
+.map-area[data-area="F"]{background:rgba(106,58,160,.14);border-color:rgba(106,58,160,.45);}
+.map-area[data-area="F"]::before{background:var(--clr-F);}
+.map-area[data-area="F"].active{background:rgba(106,58,160,.28);border-color:var(--clr-F);box-shadow:0 0 18px rgba(106,58,160,.3);}
+.map-area[data-area="G"]{background:rgba(192,48,26,.14);border-color:rgba(192,48,26,.45);}
+.map-area[data-area="G"]::before{background:var(--clr-G);}
+.map-area[data-area="G"].active{background:rgba(192,48,26,.28);border-color:var(--clr-G);box-shadow:0 0 18px rgba(192,48,26,.3);}
+.map-area[data-area="H"]{background:rgba(176,80,16,.14);border-color:rgba(176,80,16,.45);}
+.map-area[data-area="H"]::before{background:var(--clr-H);}
+.map-area[data-area="H"].active{background:rgba(176,80,16,.28);border-color:var(--clr-H);box-shadow:0 0 18px rgba(176,80,16,.3);}
+.map-area[data-area="I"]{background:rgba(192,48,96,.14);border-color:rgba(192,48,96,.45);}
+.map-area[data-area="I"]::before{background:var(--clr-I);}
+.map-area[data-area="I"].active{background:rgba(192,48,96,.28);border-color:var(--clr-I);box-shadow:0 0 18px rgba(192,48,96,.3);}
+ 
+.map-area-label{
+  font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;
+  color:#fff;display:flex;align-items:center;gap:6px;margin-bottom:5px;
+}
+.map-area-badge{
+  font-size:.62rem;font-weight:600;padding:1px 6px;
+  border-radius:10px;color:#fff;opacity:.85;letter-spacing:.04em;
+}
+.map-area[data-area="A"] .map-area-badge{background:var(--clr-A);}
+.map-area[data-area="B"] .map-area-badge{background:var(--clr-B);}
+.map-area[data-area="C"] .map-area-badge{background:var(--clr-C);}
+.map-area[data-area="D"] .map-area-badge{background:var(--clr-D);}
+.map-area[data-area="E"] .map-area-badge{background:var(--clr-E);}
+.map-area[data-area="F"] .map-area-badge{background:var(--clr-F);}
+.map-area[data-area="G"] .map-area-badge{background:var(--clr-G);}
+.map-area[data-area="H"] .map-area-badge{background:var(--clr-H);}
+.map-area[data-area="I"] .map-area-badge{background:var(--clr-I);}
+ 
+.map-makers{
+  display:flex;flex-wrap:wrap;gap:4px;
+}
+.map-maker-chip{
+  font-size:.68rem;color:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.1);border-radius:4px;
+  padding:2px 6px;white-space:nowrap;line-height:1.4;
+}
+ 
+/* 入退場口 */
+.map-entrance{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 12px;
+  background:rgba(255,150,50,.12);
+  border:1.5px dashed rgba(255,150,50,.4);
+  border-radius:8px;
+  color:rgba(255,150,50,.9);
+  font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:600;
+  letter-spacing:.06em;
+  flex-shrink:0;
+}
+.map-entrance-arrow{font-size:1.2rem;}
+ 
+/* 中段の行（入退場口あり） */
+.map-row-with-entrance{
+  display:flex;gap:8px;margin-bottom:8px;align-items:stretch;
+}
+.map-row-main{flex:1;display:flex;flex-direction:column;gap:8px;}
+.map-entrance-col{
+  display:flex;flex-direction:column;justify-content:center;
+  width:90px;flex-shrink:0;
+}
+ 
 /* ── FILTER ── */
-.filter-wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px;}
-.filter-btn{font-family:'Oswald',sans-serif;font-size:.73rem;font-weight:600;padding:6px 16px;border-radius:30px;border:2px solid #e5e7eb;cursor:pointer;transition:all .2s;background:#fff;color:var(--text-mid);}
-.filter-btn:hover{border-color:var(--pink);color:var(--pink);}
+.filter-wrap{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px;
+}
+.filter-btn{
+  font-family:'Oswald',sans-serif;font-size:.82rem;font-weight:600;
+  padding:8px 18px;border-radius:30px;border:2px solid #dde1ea;
+  cursor:pointer;transition:all .2s;background:#fff;color:var(--text-mid);
+  letter-spacing:.04em;
+}
+.filter-btn:hover{border-color:var(--clr-B);color:var(--clr-B);}
 .filter-btn.active{color:#fff;border-color:transparent;}
-.filter-btn[data-area="all"].active{background:linear-gradient(90deg,var(--pink),var(--purple));}
+.filter-btn[data-area="all"].active{background:linear-gradient(90deg,var(--clr-B),var(--clr-C));}
 .filter-btn[data-area="A"].active{background:var(--clr-A);}
 .filter-btn[data-area="B"].active{background:var(--clr-B);}
 .filter-btn[data-area="C"].active{background:var(--clr-C);}
@@ -91,99 +243,153 @@ section{padding:50px 16px;}
 .filter-btn[data-area="G"].active{background:var(--clr-G);}
 .filter-btn[data-area="H"].active{background:var(--clr-H);}
 .filter-btn[data-area="I"].active{background:var(--clr-I);}
-.filter-status{text-align:center;font-size:.78rem;font-weight:700;color:var(--pink);margin-bottom:20px;min-height:1.2em;}
-
+ 
+.filter-status{
+  text-align:center;font-size:.9rem;font-weight:700;
+  color:var(--clr-B);margin-bottom:24px;min-height:1.4em;
+}
+ 
 /* ── EXHIBITORS ── */
 #exhibitors{background:var(--off-white);}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;max-width:1100px;margin:0 auto;}
-
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:14px;max-width:1100px;margin:0 auto;
+}
+ 
 /* カード */
-.maker-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.04);transition:transform .25s,box-shadow .25s;}
-.maker-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1);}
+.maker-card{
+  background:#fff;border-radius:16px;overflow:hidden;
+  box-shadow:0 2px 14px rgba(0,0,0,.07);
+  border:1px solid rgba(0,0,0,.05);
+  transition:transform .25s,box-shadow .25s;
+}
+.maker-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.1);}
 .maker-card.hidden{display:none;}
-
+ 
 /* カードヘッダー */
-.card-header{display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;transition:background .18s;user-select:none;-webkit-tap-highlight-color:transparent;}
+.card-header{
+  display:flex;align-items:center;gap:13px;
+  padding:14px 16px;cursor:pointer;
+  transition:background .18s;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
 .card-header:hover{background:rgba(0,0,0,.02);}
-.card-logo-box{width:54px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.02em;text-align:center;line-height:1.2;flex-shrink:0;}
+.card-logo-box{
+  width:58px;height:58px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Oswald',sans-serif;font-size:.68rem;font-weight:700;
+  letter-spacing:.01em;text-align:center;line-height:1.25;
+  flex-shrink:0;padding:4px;word-break:break-all;
+}
 .card-header-text{flex:1;min-width:0;}
-.card-area-badge{font-family:'Oswald',sans-serif;font-size:.58rem;font-weight:600;color:#fff;padding:1px 8px;border-radius:100px;display:inline-block;letter-spacing:.08em;margin-bottom:4px;}
-.card-name{font-weight:700;font-size:.85rem;color:var(--text);line-height:1.35;}
-.card-chevron{font-size:1rem;color:#9ca3af;transition:transform .25s;flex-shrink:0;line-height:1;}
+.card-area-badge{
+  font-family:'Oswald',sans-serif;font-size:.66rem;font-weight:600;
+  color:#fff;padding:2px 9px;border-radius:100px;
+  display:inline-block;letter-spacing:.08em;margin-bottom:5px;
+}
+.card-name{font-weight:700;font-size:.92rem;color:var(--text);line-height:1.35;}
+.card-chevron{font-size:1rem;color:#9ca3af;transition:transform .25s;flex-shrink:0;}
 .maker-card.open .card-chevron{transform:rotate(180deg);}
-
+ 
 /* アコーディオン */
-.card-body{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .35s;padding:0 16px;}
-.maker-card.open .card-body{max-height:500px;padding:0 16px 16px;}
-
-.card-copy{font-size:.76rem;color:var(--text-mid);line-height:1.8;border-left:3px solid;padding-left:10px;white-space:pre-line;margin-bottom:12px;}
-.card-link{display:inline-flex;align-items:center;gap:5px;font-family:'Oswald',sans-serif;font-size:.7rem;font-weight:600;text-decoration:none;padding:7px 18px;border-radius:30px;transition:all .2s;border:1.5px solid;}
+.card-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .3s;
+  padding:0 16px;
+}
+.maker-card.open .card-body{max-height:600px;padding:0 16px 18px;}
+ 
+.card-copy{
+  font-size:.86rem;color:var(--text-mid);line-height:1.85;
+  border-left:3px solid;padding-left:11px;
+  white-space:pre-line;margin-bottom:14px;
+}
+.card-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'Oswald',sans-serif;font-size:.78rem;font-weight:600;
+  text-decoration:none;padding:8px 20px;border-radius:30px;
+  transition:all .2s;border:1.5px solid;letter-spacing:.04em;
+}
 .card-link::after{content:' →';}
 .card-link:hover{color:#fff !important;}
-.card-no-info{font-size:.74rem;color:#9ca3af;font-style:italic;}
-
-/* エリア別カラー */
+.card-no-info{font-size:.82rem;color:#9ca3af;font-style:italic;padding:4px 0;}
+ 
+/* エリア別カード色 */
 .maker-card[data-area="A"] .card-logo-box{background:var(--clr-A-bg);color:var(--clr-A-dk);}
 .maker-card[data-area="A"] .card-area-badge{background:var(--clr-A);}
 .maker-card[data-area="A"] .card-copy{border-color:var(--clr-A);}
 .maker-card[data-area="A"] .card-link{color:var(--clr-A-dk);border-color:var(--clr-A);}
-.maker-card[data-area="A"] .card-link:hover{background:var(--clr-A);}
-
+.maker-card[data-area="A"] .card-link:hover{background:var(--clr-A);border-color:var(--clr-A);}
+ 
 .maker-card[data-area="B"] .card-logo-box{background:var(--clr-B-bg);color:var(--clr-B-dk);}
 .maker-card[data-area="B"] .card-area-badge{background:var(--clr-B);}
 .maker-card[data-area="B"] .card-copy{border-color:var(--clr-B);}
 .maker-card[data-area="B"] .card-link{color:var(--clr-B-dk);border-color:var(--clr-B);}
-.maker-card[data-area="B"] .card-link:hover{background:var(--clr-B);}
-
+.maker-card[data-area="B"] .card-link:hover{background:var(--clr-B);border-color:var(--clr-B);}
+ 
 .maker-card[data-area="C"] .card-logo-box{background:var(--clr-C-bg);color:var(--clr-C-dk);}
 .maker-card[data-area="C"] .card-area-badge{background:var(--clr-C);}
 .maker-card[data-area="C"] .card-copy{border-color:var(--clr-C);}
 .maker-card[data-area="C"] .card-link{color:var(--clr-C-dk);border-color:var(--clr-C);}
-.maker-card[data-area="C"] .card-link:hover{background:var(--clr-C);}
-
+.maker-card[data-area="C"] .card-link:hover{background:var(--clr-C);border-color:var(--clr-C);}
+ 
 .maker-card[data-area="D"] .card-logo-box{background:var(--clr-D-bg);color:var(--clr-D-dk);}
 .maker-card[data-area="D"] .card-area-badge{background:var(--clr-D);}
 .maker-card[data-area="D"] .card-copy{border-color:var(--clr-D);}
 .maker-card[data-area="D"] .card-link{color:var(--clr-D-dk);border-color:var(--clr-D);}
-.maker-card[data-area="D"] .card-link:hover{background:var(--clr-D);}
-
+.maker-card[data-area="D"] .card-link:hover{background:var(--clr-D);border-color:var(--clr-D);}
+ 
 .maker-card[data-area="E"] .card-logo-box{background:var(--clr-E-bg);color:var(--clr-E-dk);}
 .maker-card[data-area="E"] .card-area-badge{background:var(--clr-E);}
 .maker-card[data-area="E"] .card-copy{border-color:var(--clr-E);}
 .maker-card[data-area="E"] .card-link{color:var(--clr-E-dk);border-color:var(--clr-E);}
-.maker-card[data-area="E"] .card-link:hover{background:var(--clr-E);}
-
+.maker-card[data-area="E"] .card-link:hover{background:var(--clr-E);border-color:var(--clr-E);}
+ 
 .maker-card[data-area="F"] .card-logo-box{background:var(--clr-F-bg);color:var(--clr-F-dk);}
 .maker-card[data-area="F"] .card-area-badge{background:var(--clr-F);}
 .maker-card[data-area="F"] .card-copy{border-color:var(--clr-F);}
 .maker-card[data-area="F"] .card-link{color:var(--clr-F-dk);border-color:var(--clr-F);}
-.maker-card[data-area="F"] .card-link:hover{background:var(--clr-F);}
-
+.maker-card[data-area="F"] .card-link:hover{background:var(--clr-F);border-color:var(--clr-F);}
+ 
 .maker-card[data-area="G"] .card-logo-box{background:var(--clr-G-bg);color:var(--clr-G-dk);}
 .maker-card[data-area="G"] .card-area-badge{background:var(--clr-G);}
 .maker-card[data-area="G"] .card-copy{border-color:var(--clr-G);}
 .maker-card[data-area="G"] .card-link{color:var(--clr-G-dk);border-color:var(--clr-G);}
-.maker-card[data-area="G"] .card-link:hover{background:var(--clr-G);}
-
+.maker-card[data-area="G"] .card-link:hover{background:var(--clr-G);border-color:var(--clr-G);}
+ 
 .maker-card[data-area="H"] .card-logo-box{background:var(--clr-H-bg);color:var(--clr-H-dk);}
 .maker-card[data-area="H"] .card-area-badge{background:var(--clr-H);}
 .maker-card[data-area="H"] .card-copy{border-color:var(--clr-H);}
 .maker-card[data-area="H"] .card-link{color:var(--clr-H-dk);border-color:var(--clr-H);}
-.maker-card[data-area="H"] .card-link:hover{background:var(--clr-H);}
-
+.maker-card[data-area="H"] .card-link:hover{background:var(--clr-H);border-color:var(--clr-H);}
+ 
 .maker-card[data-area="I"] .card-logo-box{background:var(--clr-I-bg);color:var(--clr-I-dk);}
 .maker-card[data-area="I"] .card-area-badge{background:var(--clr-I);}
 .maker-card[data-area="I"] .card-copy{border-color:var(--clr-I);}
 .maker-card[data-area="I"] .card-link{color:var(--clr-I-dk);border-color:var(--clr-I);}
-.maker-card[data-area="I"] .card-link:hover{background:var(--clr-I);}
-
+.maker-card[data-area="I"] .card-link:hover{background:var(--clr-I);border-color:var(--clr-I);}
+ 
 /* ── FOOTER ── */
-footer{background:var(--text);color:rgba(255,255,255,.45);text-align:center;padding:28px 20px;font-size:.7rem;line-height:2.2;}
-footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
+footer{
+  background:var(--text);color:rgba(255,255,255,.45);
+  text-align:center;padding:32px 20px;font-size:.78rem;line-height:2.4;
+}
+footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;font-size:.92rem;}
+ 
+/* ── MOBILE ADJUSTMENTS ── */
+@media(max-width:600px){
+  .map-entrance-col{width:72px;}
+  .map-entrance{padding:6px 8px;font-size:.72rem;}
+  .map-area-label{font-size:.95rem;}
+  .map-maker-chip{font-size:.64rem;}
+  .card-name{font-size:.88rem;}
+  .filter-btn{font-size:.78rem;padding:7px 14px;}
+}
 </style>
 </head>
 <body>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
@@ -196,7 +402,7 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
     </div>
   </div>
 </div>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">BC 2026</div>
@@ -205,175 +411,206 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
     <li><a href="#exhibitors">EXHIBITORS</a></li>
   </ul>
 </nav>
-
+ 
 <!-- FLOOR MAP -->
 <section id="floormap">
   <div class="sec-header">
     <div class="sec-eyebrow">VENUE GUIDE</div>
     <h2 class="sec-title">FLOOR MAP</h2>
     <div class="rainbow-line"></div>
-    <p class="sec-desc">エリア図面準拠｜各エリアをタップするとメーカーを絞り込めます</p>
+    <p class="sec-desc">各エリアをタップするとメーカーを絞り込めます</p>
   </div>
-  <div class="map-wrap">
-    <div class="map-hint">タップして絞り込み</div>
-    <div class="map-svg-box">
-      <!--
-        図面準拠レイアウト:
-          上段全幅 → A
-          中段: B(左) / C(右)
-          中2段: D(左) / E(右)
-          下段: F(左) / G(右)
-          最下段: H(左) / I(右)
-          入口: 左下
-      -->
-      <svg id="venueSVG" viewBox="0 0 900 530" xmlns="http://www.w3.org/2000/svg" class="venue-svg">
-        <defs>
-          <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f5a623;stop-opacity:.28"/><stop offset="100%" style="stop-color:#d4840a;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gB" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff4d8d;stop-opacity:.28"/><stop offset="100%" style="stop-color:#c2185b;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gC" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:.28"/><stop offset="100%" style="stop-color:#5b21b6;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gD" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0d9488;stop-opacity:.28"/><stop offset="100%" style="stop-color:#0f766e;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gE" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#0284c7;stop-opacity:.28"/><stop offset="100%" style="stop-color:#0369a1;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gF" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00c9a7;stop-opacity:.28"/><stop offset="100%" style="stop-color:#047857;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gG" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#e11d48;stop-opacity:.28"/><stop offset="100%" style="stop-color:#be123c;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gH" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#d97706;stop-opacity:.28"/><stop offset="100%" style="stop-color:#b45309;stop-opacity:.12"/></linearGradient>
-          <linearGradient id="gI" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#4338ca;stop-opacity:.28"/><stop offset="100%" style="stop-color:#3730a3;stop-opacity:.12"/></linearGradient>
-          <!-- グロウフィルター -->
-          <filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-
-        <!-- 補助グリッド線 -->
-        <line x1="0" y1="82" x2="900" y2="82" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-        <line x1="0" y1="192" x2="900" y2="192" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-        <line x1="0" y1="302" x2="900" y2="302" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-        <line x1="0" y1="412" x2="900" y2="412" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-        <line x1="450" y1="82" x2="450" y2="520" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-
-        <!-- ═════ A : 上段全幅 ═════ -->
-        <g class="area-cell" id="map-A">
-          <rect class="area-fill" x="8" y="8" width="884" height="70" rx="10" fill="url(#gA)"/>
-          <rect class="area-border" x="8" y="8" width="884" height="70" rx="10" fill="none" stroke="#f5a623" stroke-width="1.5" opacity=".65"/>
-          <rect x="8" y="8" width="884" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <!-- 文字 -->
-          <text x="30" y="55" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#f5a623;" filter="url(#glow)">A</text>
-          <text x="64" y="30" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(245,166,35,.65);">LOBBY AREA</text>
-          <text x="64" y="48" style="font-size:9.5px;fill:rgba(255,255,255,.75);">タカラベルモント｜サインド｜滝川｜エステシモ｜soeasy｜ガモウ</text>
-          <text x="64" y="65" style="font-size:9.5px;fill:rgba(255,255,255,.75);">ダイソン｜AVEDA｜菊星｜モロッカンオイル｜マイクロバブル｜（11社）</text>
-        </g>
-
-        <!-- ═════ B : 中段左 ═════ -->
-        <g class="area-cell" id="map-B">
-          <rect class="area-fill" x="8" y="90" width="434" height="98" rx="10" fill="url(#gB)"/>
-          <rect class="area-border" x="8" y="90" width="434" height="98" rx="10" fill="none" stroke="#ff4d8d" stroke-width="1.5" opacity=".65"/>
-          <rect x="8" y="90" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="30" y="138" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#ff4d8d;" filter="url(#glow)">B</text>
-          <text x="64" y="112" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(255,77,141,.65);">COLOR &amp; CARE</text>
-          <text x="64" y="128" style="font-size:9.5px;fill:rgba(255,255,255,.75);">ロレアル｜ミルボン/インプレア</text>
-          <text x="64" y="144" style="font-size:9.5px;fill:rgba(255,255,255,.75);">ヘンケル｜ニューウェイ｜アマトラ</text>
-          <text x="64" y="160" style="font-size:9.5px;fill:rgba(255,255,255,.75);">リアル化学｜アリミノ｜セフティ</text>
-          <text x="64" y="176" style="font-size:8.5px;fill:rgba(255,255,255,.4);">8社</text>
-        </g>
-
-        <!-- ═════ C : 中段右 ═════ -->
-        <g class="area-cell" id="map-C">
-          <rect class="area-fill" x="458" y="90" width="434" height="98" rx="10" fill="url(#gC)"/>
-          <rect class="area-border" x="458" y="90" width="434" height="98" rx="10" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity=".65"/>
-          <rect x="458" y="90" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="480" y="138" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#8b5cf6;" filter="url(#glow)">C</text>
-          <text x="514" y="112" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(139,92,246,.65);">COLOR &amp; CARE</text>
-          <text x="514" y="128" style="font-size:9.5px;fill:rgba(255,255,255,.75);">千代田化学｜ルベル｜武田</text>
-          <text x="514" y="144" style="font-size:9.5px;fill:rgba(255,255,255,.75);">GOALD JAPAN｜ウエラ</text>
-          <text x="514" y="160" style="font-size:9.5px;fill:rgba(255,255,255,.75);">UnG｜ホーユー</text>
-          <text x="514" y="176" style="font-size:8.5px;fill:rgba(255,255,255,.4);">7社</text>
-        </g>
-
-        <!-- ═════ D : 中2左 ═════ -->
-        <g class="area-cell" id="map-D">
-          <rect class="area-fill" x="8" y="200" width="434" height="98" rx="10" fill="url(#gD)"/>
-          <rect class="area-border" x="8" y="200" width="434" height="98" rx="10" fill="none" stroke="#0d9488" stroke-width="1.5" opacity=".65"/>
-          <rect x="8" y="200" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="30" y="248" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#0d9488;" filter="url(#glow)">D</text>
-          <text x="64" y="222" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(13,148,136,.65);">COSMETICS</text>
-          <text x="64" y="238" style="font-size:9.5px;fill:rgba(255,255,255,.75);">セフィーヌ｜RadiAct(PROLASH)｜コーセー</text>
-          <text x="64" y="254" style="font-size:9.5px;fill:rgba(255,255,255,.75);">MYHONEY｜イムダイン｜BJC</text>
-          <text x="64" y="270" style="font-size:9.5px;fill:rgba(255,255,255,.75);">ユーグレナ｜SHIGETA PARIS｜TooB</text>
-          <text x="64" y="286" style="font-size:8.5px;fill:rgba(255,255,255,.4);">9社</text>
-        </g>
-
-        <!-- ═════ E : 中2右 ═════ -->
-        <g class="area-cell" id="map-E">
-          <rect class="area-fill" x="458" y="200" width="434" height="98" rx="10" fill="url(#gE)"/>
-          <rect class="area-border" x="458" y="200" width="434" height="98" rx="10" fill="none" stroke="#0284c7" stroke-width="1.5" opacity=".65"/>
-          <rect x="458" y="200" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="480" y="248" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#0284c7;" filter="url(#glow)">E</text>
-          <text x="514" y="222" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(2,132,199,.65);">HAIR CARE</text>
-          <text x="514" y="238" style="font-size:9.5px;fill:rgba(255,255,255,.75);">サンコール｜中野製薬</text>
-          <text x="514" y="254" style="font-size:9.5px;fill:rgba(255,255,255,.75);">テクノエイト｜b-ex</text>
-          <text x="514" y="286" style="font-size:8.5px;fill:rgba(255,255,255,.4);">4社</text>
-        </g>
-
-        <!-- ═════ F : 下段左 ═════ -->
-        <g class="area-cell" id="map-F">
-          <rect class="area-fill" x="8" y="310" width="434" height="98" rx="10" fill="url(#gF)"/>
-          <rect class="area-border" x="8" y="310" width="434" height="98" rx="10" fill="none" stroke="#00c9a7" stroke-width="1.5" opacity=".65"/>
-          <rect x="8" y="310" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="30" y="358" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#00c9a7;" filter="url(#glow)">F</text>
-          <text x="64" y="332" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(0,201,167,.65);">TREATMENT</text>
-          <text x="64" y="348" style="font-size:9.5px;fill:rgba(255,255,255,.75);">ナプラ｜sins｜ハホニコ｜デミコスメ</text>
-          <text x="64" y="364" style="font-size:9.5px;fill:rgba(255,255,255,.75);">イーラル｜グランクラージュ</text>
-          <text x="64" y="380" style="font-size:9.5px;fill:rgba(255,255,255,.75);">ビーファースト｜マデナ</text>
-          <text x="64" y="396" style="font-size:8.5px;fill:rgba(255,255,255,.4);">8社</text>
-        </g>
-
-        <!-- ═════ G : 下段右 ═════ -->
-        <g class="area-cell" id="map-G">
-          <rect class="area-fill" x="458" y="310" width="434" height="98" rx="10" fill="url(#gG)"/>
-          <rect class="area-border" x="458" y="310" width="434" height="98" rx="10" fill="none" stroke="#e11d48" stroke-width="1.5" opacity=".65"/>
-          <rect x="458" y="310" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="480" y="358" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#e11d48;" filter="url(#glow)">G</text>
-          <text x="514" y="332" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(225,29,72,.65);">SKIN CARE</text>
-          <text x="514" y="348" style="font-size:9.5px;fill:rgba(255,255,255,.75);">F'sビューティー｜グランデックス｜ワイマック</text>
-          <text x="514" y="364" style="font-size:9.5px;fill:rgba(255,255,255,.75);">野口総合研究所｜自由が丘クリニック</text>
-          <text x="514" y="380" style="font-size:9.5px;fill:rgba(255,255,255,.75);">カエタス｜香栄化学｜パシフィック</text>
-          <text x="514" y="396" style="font-size:8.5px;fill:rgba(255,255,255,.4);">8社</text>
-        </g>
-
-        <!-- ═════ H : 最下左 ═════ -->
-        <g class="area-cell" id="map-H">
-          <rect class="area-fill" x="8" y="420" width="434" height="90" rx="10" fill="url(#gH)"/>
-          <rect class="area-border" x="8" y="420" width="434" height="90" rx="10" fill="none" stroke="#d97706" stroke-width="1.5" opacity=".65"/>
-          <rect x="8" y="420" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="30" y="466" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#d97706;" filter="url(#glow)">H</text>
-          <text x="64" y="442" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(217,119,6,.65);">TOOLS &amp; SCISSORS</text>
-          <text x="64" y="458" style="font-size:9.5px;fill:rgba(255,255,255,.75);">サクシード｜バルクオム｜アデランス</text>
-          <text x="64" y="474" style="font-size:9.5px;fill:rgba(255,255,255,.75);">日理｜フェザー｜ヤマノ｜水谷シザー｜内海</text>
-          <text x="64" y="499" style="font-size:8.5px;fill:rgba(255,255,255,.4);">8社</text>
-        </g>
-
-        <!-- ═════ I : 最下右 ═════ -->
-        <g class="area-cell" id="map-I">
-          <rect class="area-fill" x="458" y="420" width="434" height="90" rx="10" fill="url(#gI)"/>
-          <rect class="area-border" x="458" y="420" width="434" height="90" rx="10" fill="none" stroke="#4338ca" stroke-width="1.5" opacity=".65"/>
-          <rect x="458" y="420" width="434" height="4" rx="2" fill="rgba(255,255,255,.14)" pointer-events="none"/>
-          <text x="480" y="466" style="font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;fill:#7c3aed;" filter="url(#glow)">I</text>
-          <text x="514" y="442" style="font-family:'Oswald',sans-serif;font-size:8.5px;fill:rgba(67,56,202,.65);">DEVICES</text>
-          <text x="514" y="458" style="font-size:9.5px;fill:rgba(255,255,255,.75);">アンドナイン｜大西｜KINUJO｜awaas</text>
-          <text x="514" y="474" style="font-size:9.5px;fill:rgba(255,255,255,.75);">LOWBAL｜ツインバード｜LOA｜Kirala</text>
-          <text x="514" y="490" style="font-size:9.5px;fill:rgba(255,255,255,.75);">1DK｜MUK｜YA-MAN</text>
-          <text x="514" y="499" style="font-size:8.5px;fill:rgba(255,255,255,.4);">11社</text>
-        </g>
-
-        <!-- ═════ 入口（左下） ═════ -->
-        <!-- 矢印 -->
-        <line x1="10" y1="516" x2="130" y2="516" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <polygon points="10,512 10,520 2,516" fill="rgba(255,255,255,.3)"/>
-        <!-- バッジ -->
-        <rect x="130" y="508" width="80" height="18" rx="9" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
-        <text x="170" y="521" text-anchor="middle" style="font-family:'Oswald',sans-serif;font-size:9px;font-weight:600;fill:rgba(255,255,255,.7);">← 入　口</text>
-      </svg>
-    </div>
+  <div class="map-outer">
+    <div class="map-hint">👆 タップして絞り込み</div>
+    <div class="venue-map">
+ 
+      <!-- ① Aエリア（上段・全幅） -->
+      <div class="map-row">
+        <div class="map-area" data-area="A">
+          <div class="map-area-label">
+            <span style="font-size:1.4rem;color:var(--clr-A);">A</span>
+            <span class="map-area-badge">Aエリア</span>
+            <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">11社</span>
+          </div>
+          <div class="map-makers">
+            <span class="map-maker-chip">タカラベルモント</span>
+            <span class="map-maker-chip">エステシモ</span>
+            <span class="map-maker-chip">マイクロバブル</span>
+            <span class="map-maker-chip">Beauty Merit</span>
+            <span class="map-maker-chip">soeasy</span>
+            <span class="map-maker-chip">滝川</span>
+            <span class="map-maker-chip">菊星</span>
+            <span class="map-maker-chip">ダイソン</span>
+            <span class="map-maker-chip">AVEDA</span>
+            <span class="map-maker-chip">モロッカンオイル</span>
+            <span class="map-maker-chip">ガモウ</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ② 中段（B / C / D）＋ 入退場口 -->
+      <div class="map-row-with-entrance">
+        <!-- 入退場口（左） -->
+        <div class="map-entrance-col">
+          <div class="map-entrance">
+            <div class="map-entrance-arrow">⇔</div>
+            <div>入退<br>場口</div>
+          </div>
+        </div>
+        <!-- B / C / D（右側） -->
+        <div class="map-row-main">
+          <div class="map-row" style="margin-bottom:0;">
+            <div class="map-area" data-area="B">
+              <div class="map-area-label">
+                <span style="font-size:1.3rem;color:var(--clr-B);">B</span>
+                <span class="map-area-badge">Bエリア</span>
+                <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">8社</span>
+              </div>
+              <div class="map-makers">
+                <span class="map-maker-chip">ロレアル</span>
+                <span class="map-maker-chip">アマトラ</span>
+                <span class="map-maker-chip">セフティ</span>
+                <span class="map-maker-chip">リアル化学</span>
+                <span class="map-maker-chip">ミルボン</span>
+                <span class="map-maker-chip">ヘンケル</span>
+                <span class="map-maker-chip">ニューウェイ</span>
+                <span class="map-maker-chip">アリミノ</span>
+              </div>
+            </div>
+            <div class="map-area" data-area="C">
+              <div class="map-area-label">
+                <span style="font-size:1.3rem;color:var(--clr-C);">C</span>
+                <span class="map-area-badge">Cエリア</span>
+                <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">7社</span>
+              </div>
+              <div class="map-makers">
+                <span class="map-maker-chip">ホーユー</span>
+                <span class="map-maker-chip">武田</span>
+                <span class="map-maker-chip">千代田化学</span>
+                <span class="map-maker-chip">ウエラ</span>
+                <span class="map-maker-chip">UnG</span>
+                <span class="map-maker-chip">GOALD</span>
+                <span class="map-maker-chip">ルベル</span>
+              </div>
+            </div>
+            <div class="map-area" data-area="D">
+              <div class="map-area-label">
+                <span style="font-size:1.3rem;color:var(--clr-D);">D</span>
+                <span class="map-area-badge">Dエリア</span>
+                <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">9社</span>
+              </div>
+              <div class="map-makers">
+                <span class="map-maker-chip">ユーグレナ</span>
+                <span class="map-maker-chip">SHIGETA</span>
+                <span class="map-maker-chip">マイハニー</span>
+                <span class="map-maker-chip">コーセー</span>
+                <span class="map-maker-chip">PROLASH</span>
+                <span class="map-maker-chip">BJC</span>
+                <span class="map-maker-chip">イムダイン</span>
+                <span class="map-maker-chip">セフィーヌ</span>
+                <span class="map-maker-chip">TooB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ③ 下段（E / F / G / H） -->
+      <div class="map-row">
+        <div class="map-area" data-area="E">
+          <div class="map-area-label">
+            <span style="font-size:1.3rem;color:var(--clr-E);">E</span>
+            <span class="map-area-badge">Eエリア</span>
+            <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">4社</span>
+          </div>
+          <div class="map-makers">
+            <span class="map-maker-chip">Be-x</span>
+            <span class="map-maker-chip">サンコール</span>
+            <span class="map-maker-chip">中野製薬</span>
+            <span class="map-maker-chip">テクノエイト</span>
+          </div>
+        </div>
+        <div class="map-area" data-area="F">
+          <div class="map-area-label">
+            <span style="font-size:1.3rem;color:var(--clr-F);">F</span>
+            <span class="map-area-badge">Fエリア</span>
+            <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">8社</span>
+          </div>
+          <div class="map-makers">
+            <span class="map-maker-chip">グランクラージュ</span>
+            <span class="map-maker-chip">デミ化粧品</span>
+            <span class="map-maker-chip">イーラル</span>
+            <span class="map-maker-chip">ナプラ</span>
+            <span class="map-maker-chip">ビーファースト</span>
+            <span class="map-maker-chip">マデナ</span>
+            <span class="map-maker-chip">sins</span>
+            <span class="map-maker-chip">ハホニコ</span>
+          </div>
+        </div>
+        <div class="map-area" data-area="G">
+          <div class="map-area-label">
+            <span style="font-size:1.3rem;color:var(--clr-G);">G</span>
+            <span class="map-area-badge">Gエリア</span>
+            <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">8社</span>
+          </div>
+          <div class="map-makers">
+            <span class="map-maker-chip">香栄化学</span>
+            <span class="map-maker-chip">ワイマック</span>
+            <span class="map-maker-chip">自由が丘クリニック</span>
+            <span class="map-maker-chip">F'sビューティー</span>
+            <span class="map-maker-chip">野口総研</span>
+            <span class="map-maker-chip">グランデックス</span>
+            <span class="map-maker-chip">パシフィック</span>
+            <span class="map-maker-chip">カエタス</span>
+          </div>
+        </div>
+        <div class="map-area" data-area="H">
+          <div class="map-area-label">
+            <span style="font-size:1.3rem;color:var(--clr-H);">H</span>
+            <span class="map-area-badge">Hエリア</span>
+            <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">8社</span>
+          </div>
+          <div class="map-makers">
+            <span class="map-maker-chip">バルクオム</span>
+            <span class="map-maker-chip">サクシード</span>
+            <span class="map-maker-chip">日理</span>
+            <span class="map-maker-chip">アデランス</span>
+            <span class="map-maker-chip">水谷シザー</span>
+            <span class="map-maker-chip">フェザー</span>
+            <span class="map-maker-chip">ヤマノ</span>
+            <span class="map-maker-chip">内海</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ④ Iエリア（最下段・全幅） -->
+      <div class="map-row">
+        <div class="map-area" data-area="I">
+          <div class="map-area-label">
+            <span style="font-size:1.4rem;color:var(--clr-I);">I</span>
+            <span class="map-area-badge">Iエリア</span>
+            <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-left:auto;">11社</span>
+          </div>
+          <div class="map-makers">
+            <span class="map-maker-chip">KINUJO</span>
+            <span class="map-maker-chip">Kirala</span>
+            <span class="map-maker-chip">YA-MAN</span>
+            <span class="map-maker-chip">MUK</span>
+            <span class="map-maker-chip">ツインバード</span>
+            <span class="map-maker-chip">アンドナイン</span>
+            <span class="map-maker-chip">LOA</span>
+            <span class="map-maker-chip">1DK</span>
+            <span class="map-maker-chip">awaas</span>
+            <span class="map-maker-chip">LOWBAL</span>
+            <span class="map-maker-chip">大西</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div><!-- /venue-map -->
   </div>
 </section>
-
+ 
 <!-- EXHIBITORS -->
 <section id="exhibitors">
   <div class="sec-header">
@@ -382,9 +619,9 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
     <div class="rainbow-line"></div>
     <p class="sec-desc">メーカー名をタップするとアピールポイント・HPリンクが表示されます</p>
   </div>
-
+ 
   <div class="filter-wrap">
-    <button class="filter-btn active" data-area="all">ALL（74社）</button>
+    <button class="filter-btn active" data-area="all">すべて（74社）</button>
     <button class="filter-btn" data-area="A">Aエリア</button>
     <button class="filter-btn" data-area="B">Bエリア</button>
     <button class="filter-btn" data-area="C">Cエリア</button>
@@ -398,162 +635,166 @@ footer strong{color:rgba(255,255,255,.85);font-family:'Oswald',sans-serif;}
   <div class="filter-status" id="filterStatus">全74社を表示中</div>
   <div class="card-grid" id="cardGrid"></div>
 </section>
-
+ 
 <footer>
   <strong>BEAUTY COLLECTION 2026</strong><br>
   ビューティーコレクション｜出展メーカー案内ページ<br>
-  ©2026 beauty Collection実行委員会
+  ©2026 BEAUTY COLLECTION 実行委員会
 </footer>
-
+ 
 <script>
-/* ══ 全メーカーデータ（Numbersより74社） ══ */
+/* ══ 全メーカーデータ（74社・構文修正済み） ══ */
 const makers = [
-  // ─ A（11社）─
-  {area:"A",name:"タカラベルモント(株)",logo:"TAKARA BELMONT",copy:"・サロンでも自宅でも。ECILAで繋がるsalon体験\n・ONE CHAIR, for ALL　この１台は、全てを叶える。",url:"https://www.takarabelmont.com/"},
-  {area:"A",name:"株式会社サインド",logo:"Beauty Merit",copy:"①業界シェアNo.1の予約システム「Beauty Merit」\n②美容室の未来を映すミラー「BM Smart Mirror」\n③業界最安値水準の決済手数料「BeautyPay」",url:"https://cynd.co.jp/"},
+  /* ─ Aエリア（11社）─ */
+  {area:"A",name:"タカラベルモント株式会社",logo:"TAKARA\nBELMONT",copy:"・サロンでも自宅でも。ECILAで繋がるsalon体験\n・ONE CHAIR, for ALL　この１台は、全てを叶える。",url:"https://www.takarabelmont.com/"},
+  {area:"A",name:"株式会社サインド",logo:"Beauty\nMerit",copy:"①業界シェアNo.1の予約システム「Beauty Merit」\n②美容室の未来を映すミラー「BM Smart Mirror」\n③業界最安値水準の決済手数料「BeautyPay」",url:"https://cynd.co.jp/"},
   {area:"A",name:"滝川株式会社",logo:"TAKIGAWA",copy:"体験型",url:"https://takigawa.co.jp/"},
-  {area:"A",name:"エステシモ",logo:"ESTESSiMO",copy:"違いは、一度でわかる。\n『ESTESSiMO』が導く、リピートされ続ける最上級ヘッドスパ提案。",url:"https://www.estessimo.jp/"},
+  {area:"A",name:"エステシモ",logo:"ESTESSIMO",copy:"違いは、一度でわかる。\n『ESTESSiMO』が導く、リピートされ続ける最上級ヘッドスパ提案。",url:"https://www.estessimo.jp/"},
   {area:"A",name:"株式会社soeasy",logo:"soeasy",copy:"育成スピードの倍速化、技術の向上を実現。新人育成、組織づくりの課題をスマホで解決",url:"https://www.soeasy.co.jp/"},
-  {area:"A",name:"ガモウ販売促進部（オラプレックス・オリオセタ）",logo:"GAMO",copy:url:"https://www.gamo.co.jp/"},
+  {area:"A",name:"ガモウ販売促進部（オラプレックス・オリオセタ）",logo:"GAMO",copy:"",url:"https://www.gamo.co.jp/"},
   {area:"A",name:"ダイソン",logo:"dyson",copy:"4月発売の新製品スーパーソニック トラベルをご紹介します！",url:"https://www.dyson.co.jp/ja"},
   {area:"A",name:"AVEDA",logo:"AVEDA",copy:"自然界由来96%のアヴェダカラー",url:"https://www.aveda.jp/"},
-  {area:"A",name:"（株）菊星",logo:"菊星",copy:"業務用品をはじめ、ドリンクの試飲もやっております！",url:"https://www.kikuboshi.co.jp/"},
-  {area:"A",name:"モロッカンオイルジャパン株式会社",logo:"MOROCCANOIL",copy:"3月発売の新製品『モロッカンオイルトリートメントミスト』で、新しいオイル市場を切り開きます。",url:"https://jp.moroccanoil.com/"},
+  {area:"A",name:"株式会社菊星",logo:"菊星",copy:"業務用品をはじめ、ドリンクの試飲もやっております！",url:"https://www.kikuboshi.co.jp/"},
+  {area:"A",name:"モロッカンオイルジャパン株式会社",logo:"MOROCCAN\nOIL",copy:"3月発売の新製品『モロッカンオイルトリートメントミスト』で、新しいオイル市場を切り開きます。",url:"https://jp.moroccanoil.com/"},
   {area:"A",name:"株式会社マイクロバブル・ジャパン",logo:"MARBB",copy:"魔法のバブルでの極上体験",url:"https://marbb.com/"},
-  // ─ B（8社）─
-  {area:"B",name:"ヘンケルジャパン（株）",logo:"HENKEL",copy:"『One HENKEL』\n\"資生堂プロフェッショナル×シュワルツコフ\"\nカラー/ケア/デザインの全てに価値を提供できるブランドの融合。",url:"https://www.henkel.co.jp/"},
+ 
+  /* ─ Bエリア（8社）─ */
+  {area:"B",name:"ヘンケルジャパン株式会社",logo:"HENKEL",copy:"『One HENKEL』\n\"資生堂プロフェッショナル×シュワルツコフ\"\nカラー/ケア/デザインの全てに価値を提供できるブランドの融合。",url:"https://www.henkel.co.jp/"},
   {area:"B",name:"日本ロレアル株式会社",logo:"L'ORÉAL",copy:"KERA：3/25発売の新シリーズ\nLP：イノア新色&アルカリキャンセルオキシ",url:"https://www.loreal.com/en/"},
-  {area:"B",name:"(株)ミルボン",logo:"MILBON",copy:"カラーの常識を覆す\u201c美髪彩生\u201dカラー PRETOWA",url:"https://www.milbon.com/ja/"},
-  {area:"B",name:"ニューウェイジャパン株式会社",logo:"NEWAY JAPAN",copy:"",url:"https://www.newayjapan.com/"},
-  {area:"B",name:"株式会社アマトラ",logo:"amatora",copy:"\u201c仕上がり\u201dだけではなく\u201c再来\u201dをつくる高付加価値ヘアケア",url:"https://amatora.jp/"},
+  {area:"B",name:"株式会社ミルボン",logo:"MILBON",copy:"カラーの常識を覆す\"美髪彩生\"カラー PRETOWA",url:"https://www.milbon.com/ja/"},
+  {area:"B",name:"ニューウェイジャパン株式会社",logo:"NEWAY\nJAPAN",copy:"",url:"https://www.newayjapan.com/"},
+  {area:"B",name:"株式会社アマトラ",logo:"amatora",copy:"\"仕上がり\"だけではなく\"再来\"をつくる高付加価値ヘアケア",url:"https://amatora.jp/"},
   {area:"B",name:"リアル化学株式会社",logo:"REAL",copy:"①ヘアカラーに＋30分で出来るクイック髪質改善メニュー\n②湿気に負けないルシケアスタイリングシリーズ\n③夏向けトレンドヘアカラー",url:"https://www.real-chemical.co.jp/"},
   {area:"B",name:"株式会社アリミノ",logo:"ARIMINO",copy:"Pro confidence",url:"https://www.arimino.co.jp/"},
-  {area:"B",name:"株式セフティ",logo:"SAFETY",copy:"いち早く新商品の展示をします！ぜひブースにお立ち寄りください！",url:"https://www.safety-co.jp/"},
-  // ─ C（7社）─
-  {area:"C",name:"株式会社千代田化学",logo:"千代田化学",copy:"新製品システムトリートメント「SOLOELLE」の新発売のご案内　単価アップが出来る製品のご紹介",url:"https://chiyodakagaku.com/"},
+  {area:"B",name:"株式会社セフティ",logo:"SAFETY",copy:"いち早く新商品の展示をします！ぜひブースにお立ち寄りください！",url:"https://www.safety-co.jp/"},
+ 
+  /* ─ Cエリア（7社）─ */
+  {area:"C",name:"株式会社千代田化学",logo:"千代田\n化学",copy:"新製品システムトリートメント「SOLOELLE」の新発売のご案内　単価アップが出来る製品のご紹介",url:"https://chiyodakagaku.com/"},
   {area:"C",name:"ルベル／タカラベルモント株式会社",logo:"LEBEL",copy:"髪質改善アウトバス　セラムミルク発売！！",url:"https://www.lebel.co.jp/"},
-  {area:"C",name:"株式会社　武田",logo:"TAKEDA",copy:"その場で体験いただける商材を多数！",url:"https://www.ribiyo-takeda.co.jp/"},
-  {area:"C",name:"株式会社GOALD JAPAN",logo:"GOALD",copy:"累計出荷数50万本突破\n支持率No.1のメンズブランドCOAR",url:"https://coar.jp/"},
+  {area:"C",name:"株式会社武田",logo:"TAKEDA",copy:"その場で体験いただける商材を多数！",url:"https://www.ribiyo-takeda.co.jp/"},
+  {area:"C",name:"株式会社GOALD JAPAN",logo:"GOALD\nJAPAN",copy:"累計出荷数50万本突破\n支持率No.1のメンズブランドCOAR",url:"https://coar.jp/"},
   {area:"C",name:"ウエラ",logo:"wella",copy:"過酷な夏の紫外線、乾燥によるダメージに備えて、髪を整えるためのケア／カラーをご提案します。",url:"https://www.wella.co.jp/"},
   {area:"C",name:"underbar plus（株式会社UnG）",logo:"UnG",copy:"感性と理論。デザイナーの答え。",url:"https://ung.jp/"},
   {area:"C",name:"ホーユー株式会社",logo:"hoyu",copy:"価値提供",url:"https://www.hoyu.co.jp/"},
-  // ─ D（9社）─
+ 
+  /* ─ Dエリア（9社）─ */
   {area:"D",name:"セフィーヌ",logo:"CEFINE",copy:"やさしさも効果も実感できる自然派コスメ。\n低価格帯から高価格帯のアイテムをご用意。\nスキンケアからベースメイクまで、サロン様の新たな成長エンジンへ繋がる「効果実感型」化粧品を是非お試しください。",url:"https://cefinecosmetics.co.jp/"},
   {area:"D",name:"株式会社RadiAct（PROLASH）",logo:"RadiAct",copy:"最新LEDライト「イルミーク」をお試し頂けます。",url:"https://radiact.net/"},
-  {area:"D",name:"コーセープロフェッショナル（株）",logo:"KOSÉ",copy:"話題のワンバイコーセー、メイクキープシリーズ等やサロン専売品をお試しいただけます！\n展示会限定でサンプルもお渡しいたします。",url:"https://www.koseprofessional.co.jp/"},
-  {area:"D",name:"MYHONEY",logo:"MYHONEY",copy:"生はちみつの試食・はちみつ",url:"https://www.myhoneyjapan.com/"},
+  {area:"D",name:"コーセープロフェッショナル株式会社",logo:"KOSÉ",copy:"話題のワンバイコーセー、メイクキープシリーズ等やサロン専売品をお試しいただけます！\n展示会限定でサンプルもお渡しいたします。",url:"https://www.koseprofessional.co.jp/"},
+  {area:"D",name:"MYHONEY",logo:"MY\nHONEY",copy:"生はちみつの試食・はちみつ",url:"https://www.myhoneyjapan.com/"},
   {area:"D",name:"株式会社イムダイン",logo:"immudyne",copy:"真の美しは、心身の健康から",url:"https://immudyne.co.jp/"},
   {area:"D",name:"株式会社BJC",logo:"BJC",copy:"人気のV3製品と2026最新コスメがブースにてタッチアップ可能",url:"https://bjc-group.co.jp/"},
   {area:"D",name:"株式会社ユーグレナ",logo:"euglena",copy:"ゾンビ細胞（老化細胞）を除去する引き算のコスメ・NEcCOスーペリアを見に来てください！",url:"https://www.euglena.jp/"},
-  {area:"D",name:"SHIGETA PARIS",logo:"SHIGETA",copy:"生まれ変わったヘアケアシリーズをはじめ、ブランドのマスターピースであるエッセンシャルオイルなど、SHIGETAの世界観をご体感いただきます。",url:"https://shigetaparis.jp/"},
+  {area:"D",name:"SHIGETA PARIS",logo:"SHIGETA\nPARIS",copy:"生まれ変わったヘアケアシリーズをはじめ、ブランドのマスターピースであるエッセンシャルオイルなど、SHIGETAの世界観をご体感いただきます。",url:"https://shigetaparis.jp/"},
   {area:"D",name:"TooB",logo:"TooB",copy:"新商品の化粧水をリリースし、3商品にて参加させていただきます。",url:"https://toob.tokyo/"},
-  // ─ E（4社）─
+ 
+  /* ─ Eエリア（4社）─ */
   {area:"E",name:"サンコール",logo:"SUNCALL",copy:"最先端の成分をフル活用",url:"https://suncall-net.co.jp/"},
-  {area:"E",name:"中野製薬株式会社",logo:"中野製薬",copy:"ヘアケアで、利益をデザインする。\n―― 大人世代を掴む「ラデュラ」× 収益を最大化する「ソンク」――",url:"https://www.nakano-seiyaku.co.jp/"},
-  {area:"E",name:"テクノエイト株式会社",logo:"TECHNO-8",copy:"新たな高付加価値づくりと顧客満足度up",url:"https://www.techno-eight.co.jp/"},
-  {area:"E",name:"株式会社b-ex",logo:"Be-x",copy:"大人気オルキデから第二弾が登場！",url:"https://www.b-exgroup.com/"},
-  // ─ F（8社）─
-  {area:"F",name:"株式会社　ナプラ",logo:"napla",copy:"Our Summer Beauty Recommendations",url:"https://www.napla.co.jp/"},
+  {area:"E",name:"中野製薬株式会社",logo:"中野\n製薬",copy:"ヘアケアで、利益をデザインする。\n―― 大人世代を掴む「ラデュラ」× 収益を最大化する「ソンク」――",url:"https://www.nakano-seiyaku.co.jp/"},
+  {area:"E",name:"テクノエイト株式会社",logo:"TECHNO\n-8",copy:"新たな高付加価値づくりと顧客満足度up",url:"https://www.techno-eight.co.jp/"},
+  {area:"E",name:"株式会社b-ex",logo:"b-ex",copy:"大人気オルキデから第二弾が登場！",url:"https://www.b-exgroup.com/"},
+ 
+  /* ─ Fエリア（8社）─ */
+  {area:"F",name:"株式会社ナプラ",logo:"napla",copy:"Our Summer Beauty Recommendations",url:"https://www.napla.co.jp/"},
   {area:"F",name:"sinsコスメティクス",logo:"sins",copy:"日本一簡単な縮毛矯正　sins髪質改善ストレート",url:"https://www.sins-cosmetics.com/"},
   {area:"F",name:"株式会社ハホニコ",logo:"HAHONICO",copy:"梅雨の湿気対策",url:"https://hahonico.com/"},
   {area:"F",name:"デミコスメティクス",logo:"DEMI",copy:"6月発売のタイパ・コスパ抜群ブリーチレス韓国カラーや、大人気の髪質改善フローディアモアを出展いたします！",url:"https://www.demi.nicca.co.jp/"},
   {area:"F",name:"イーラル株式会社",logo:"ERAL",copy:"独自の『ヘッドキュア』技術とエイジングケア",url:"https://eral.co.jp/"},
-  {area:"F",name:"株式会社　グランクラージュ",logo:"GRANCOURAGE",copy:"時短して単価アップ",url:"http://grancourage.jp/"},
+  {area:"F",name:"株式会社グランクラージュ",logo:"GRAN\nCOURAGE",copy:"時短して単価アップ",url:"http://grancourage.jp/"},
   {area:"F",name:"株式会社ビーファースト",logo:"BFIRST",copy:"現場を持っている強みを活かし、「MLPB」による店販文化づくりと元祖酸熱トリートメント「APRO」で髪質改善を叶えます！",url:"https://www.bfirst.jp/"},
   {area:"F",name:"マデナ",logo:"madena",copy:"髪の未来をりんごが変える。\n次世代エイジングケアのご提案🍎",url:"https://madena.co.jp/"},
-  // ─ G（8社）─
-  {area:"G",name:"（株）F'sビューティー",logo:"F's BEAUTY",copy:"花粉&紫外線対策　敏感肌の方にご提案します。",url:"https://alpsion.com/"},
+ 
+  /* ─ Gエリア（8社）─ */
+  {area:"G",name:"株式会社F'sビューティー",logo:"F's\nBEAUTY",copy:"花粉&紫外線対策　敏感肌の方にご提案します。",url:"https://alpsion.com/"},
   {area:"G",name:"日本グランデックス化粧品株式会社",logo:"GRANDEX",copy:"頭皮にも、髪にも、もっと優しいカラー。",url:"http://www.altisola.co.jp/"},
   {area:"G",name:"株式会社ワイマック ジュエル・コスメティックス",logo:"JEWEL",copy:"簡単に髪質改善ができます！\n唯一無二の店販商品ができました！",url:"https://jewel-cosme.jp/"},
-  {area:"G",name:"(株)野口総合研究所",logo:"野口総研",copy:"皮膚、頭皮トラブルのお悩み解決アイテム",url:"https://www.noguchi-soken.jp/"},
+  {area:"G",name:"株式会社野口総合研究所",logo:"野口\n総研",copy:"皮膚、頭皮トラブルのお悩み解決アイテム",url:"https://www.noguchi-soken.jp/"},
   {area:"G",name:"自由が丘クリニックドクターズコスメティクス",logo:"JCDC",copy:"『診察室で生まれた化粧品』\n自由が丘クリニックの患者さまと医師の想いから生まれたリアルドクターズコスメ。",url:"https://jcdc.co.jp/"},
   {area:"G",name:"カエタステクノロジー",logo:"CAETUS",copy:"高価値ケア製品を準備しています！",url:"https://caetus.co.jp/"},
-  {area:"G",name:"香栄化学株式会社",logo:"香栄化学",copy:"髪質改善・梅雨対策・UVケアにこだわりの商材で業務メニューと店販をご案内いたします。",url:"https://www.koei-kagaku.co.jp/"},
-  {area:"G",name:"株式会社 パシフィックプロダクツ",logo:"PACIFIC",copy:"スパをイメージした、２ブランド\n①クレイ「海泥」毛髪・頭皮保湿ケア\n②ボタニカルミントで清涼感と頭皮保湿を促します。",url:"https://www.pacific-products.co.jp/"},
-  // ─ H（8社）─
+  {area:"G",name:"香栄化学株式会社",logo:"香栄\n化学",copy:"髪質改善・梅雨対策・UVケアにこだわりの商材で業務メニューと店販をご案内いたします。",url:"https://www.koei-kagaku.co.jp/"},
+  {area:"G",name:"株式会社パシフィックプロダクツ",logo:"PACIFIC",copy:"スパをイメージした、２ブランド\n①クレイ「海泥」毛髪・頭皮保湿ケア\n②ボタニカルミントで清涼感と頭皮保湿を促します。",url:"https://www.pacific-products.co.jp/"},
+ 
+  /* ─ Hエリア（8社）─ */
   {area:"H",name:"株式会社サクシード",logo:"SUCCEED",copy:"全商品20%OFF分割手数料無金利",url:"https://www.succeedscissors.com/"},
-  {area:"H",name:"バルクオム",logo:"BULK HOMME",copy:"メンズへの提案はメンズブランド\nバルクオム",url:"https://bulk.co.jp/"},
+  {area:"H",name:"バルクオム",logo:"BULK\nHOMME",copy:"メンズへの提案はメンズブランド\nバルクオム",url:"https://bulk.co.jp/"},
   {area:"H",name:"株式会社アデランス",logo:"ADERANS",copy:"アデランスより大人気ザ・ドライヤーの夏キャンペーンとシートエクステタイプの新商品をご紹介させていただきます。",url:"https://www.aderans-shop.jp/shop/default.aspx"},
   {area:"H",name:"日理株式会社",logo:"NICHIRI",copy:"P-UP製品　特殊加工による様々な製品の活性化",url:"https://www.nichiri.com/"},
   {area:"H",name:"フェザー株式会社レオンカ",logo:"LEONKA",copy:"",url:"https://leonka.jp/"},
   {area:"H",name:"山野美容商事株式会社",logo:"YAMANO",copy:"DENBAヘルスにて快適空間実現",url:"https://www.yamano.com/"},
-  {area:"H",name:"（有）水谷理美容鋏製作所／REUZEL ２社",logo:"MIZUTANI",copy:"",url:"https://www.mizutani-scissors.com/"},
-  {area:"H",name:"株式会社 内海",logo:"UTSUMI",copy:"数十種類のシザーがその場で試し切り出来ます。",url:"https://uu-utsumi.co.jp/"},
-  // ─ I（11社）─
+  {area:"H",name:"有限会社水谷理美容鋏製作所 / REUZEL",logo:"MIZUTANI\n/REUZEL",copy:"",url:"https://www.mizutani-scissors.com/"},
+  {area:"H",name:"株式会社内海",logo:"UTSUMI",copy:"数十種類のシザーがその場で試し切り出来ます。",url:"https://uu-utsumi.co.jp/"},
+ 
+  /* ─ Iエリア（11社）─ */
   {area:"I",name:"アンドナイン株式会社",logo:"&NINE",copy:"",url:"https://andnine.jp/"},
-  {area:"I",name:"（株）大西",logo:"ONISHI",copy:"ワコウクロス　実際に触って頂けます",url:"https://www.onbeauty.biz/"},
+  {area:"I",name:"株式会社大西",logo:"ONISHI",copy:"ワコウクロス　実際に触って頂けます",url:"https://www.onbeauty.biz/"},
   {area:"I",name:"株式会社KINUJO",logo:"KINUJO",copy:"触れた瞬間、違いがわかる。\n新登場「サファイアストレートプロ」体験会開催",url:"https://kinujo.jp/"},
   {area:"I",name:"株式会社awaas",logo:"awaas",copy:"天然由来成分へのこだわりと、「全身にも使える」というユニークな視点で話題を呼んでいる新ブランドです。",url:"https://awaas.co.jp/"},
   {area:"I",name:"株式会社LOWBAL",logo:"LOWBAL",copy:"サロンワークを、もっとシンプルに。もっと高品質に。",url:"https://lowbal.co.jp/"},
-  {area:"I",name:"株式会社ツインバード",logo:"TWINBIRD",copy:"最大224段の風の中からあなたにぴったりの風をお届けします",url:"https://www.twinbird.jp/"},
+  {area:"I",name:"株式会社ツインバード",logo:"TWIN\nBIRD",copy:"最大224段の風の中からあなたにぴったりの風をお届けします",url:"https://www.twinbird.jp/"},
   {area:"I",name:"JadeJapan（LOA）",logo:"LOA",copy:"LOAのプレミアムライン香り3種を先行展示予定",url:"https://jade-japan.com/loa/ja/oil/"},
   {area:"I",name:"株式会社Kirala",logo:"Kirala",copy:"革新的な美容デバイスや話題のドライヤーまで全てお試しいただけます。",url:"https://corp.kirala.jp/"},
   {area:"I",name:"pad（1DK）",logo:"1DK",copy:"ユニークなテクスチャーのスタイリング剤と機能的なヘアケアが話題のブランド「1DK」。発売前の新製品もご用意していますので、是非ブースで世界観をご体感ください。",url:"https://1-d-k.com/"},
   {area:"I",name:"株式会社MUK",logo:"MUK",copy:"Instagramで話題！カラーミキサーやドライヤー、世界初音波美顔器を扱うメーカー",url:"https://muk-inc.com/"},
   {area:"I",name:"YA-MAN",logo:"YA-MAN",copy:"美のプロフェッショナルとともに、あなたの美を叶える。",url:"https://www.ya-man-tokyo-japan.com/"},
 ];
-
-const areaNames = {A:'',B:'',C:'',D:'',E:'',F:'',G:'',H:'',I:''};
-
-/* ══ カード生成 ══ */
+ 
+/* エリア名 */
+const areaLabel = {A:'Aエリア',B:'Bエリア',C:'Cエリア',D:'Dエリア',E:'Eエリア',F:'Fエリア',G:'Gエリア',H:'Hエリア',I:'Iエリア'};
+ 
+/* ── カード生成 ── */
 function buildCards(){
   const grid = document.getElementById('cardGrid');
-  makers.forEach(m => {
+  makers.forEach(function(m){
     const card = document.createElement('div');
     card.className = 'maker-card';
     card.dataset.area = m.area;
-
+ 
     const hasCopy = m.copy && m.copy.trim();
-    const hasURL  = m.url && m.url.length > 1;
-
+    const hasURL  = m.url && m.url.length > 2;
+ 
     card.innerHTML =
       '<div class="card-header">' +
-        '<div class="card-logo-box">' + m.logo + '</div>' +
+        '<div class="card-logo-box">' + m.logo.replace(/\n/g,'<br>') + '</div>' +
         '<div class="card-header-text">' +
-          '<div class="card-area-badge">Area ' + m.area + '</div>' +
+          '<div class="card-area-badge">' + areaLabel[m.area] + '</div>' +
           '<div class="card-name">' + m.name + '</div>' +
         '</div>' +
         '<div class="card-chevron">▾</div>' +
       '</div>' +
       '<div class="card-body">' +
-        (hasCopy ? '<div class="card-copy">' + m.copy + '</div>' : '<p class="card-no-info"></p>') +
+        (hasCopy ? '<div class="card-copy">' + m.copy.replace(/&/g,'&amp;') + '</div>' : '<p class="card-no-info">詳細準備中</p>') +
         (hasURL  ? '<a class="card-link" href="' + m.url + '" target="_blank" rel="noopener noreferrer">メーカーHP</a>' : '') +
       '</div>';
-
-    /* アコーディオン */
-    const hdr = card.querySelector('.card-header');
-    hdr.addEventListener('click', function(){
+ 
+    card.querySelector('.card-header').addEventListener('click', function(){
       card.classList.toggle('open');
     });
-
+ 
     grid.appendChild(card);
   });
 }
-
-/* ══ フィルター ══ */
+ 
+/* ── フィルター ── */
 function filterArea(area){
   /* マップ強調 */
-  document.querySelectorAll('.area-cell').forEach(g => g.classList.remove('active'));
-  if(area !== 'all'){
-    const el = document.getElementById('map-' + area);
-    if(el) el.classList.add('active');
-  }
+  document.querySelectorAll('.map-area').forEach(function(el){
+    el.classList.toggle('active', area !== 'all' && el.dataset.area === area);
+  });
   /* ボタン */
-  document.querySelectorAll('.filter-btn').forEach(btn =>
-    btn.classList.toggle('active', btn.dataset.area === area)
-  );
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.classList.toggle('active', btn.dataset.area === area);
+  });
   /* カード */
-  let count = 0;
-  document.querySelectorAll('.maker-card').forEach(card => {
-    const show = area === 'all' || card.dataset.area === area;
+  var count = 0;
+  document.querySelectorAll('.maker-card').forEach(function(card){
+    var show = area === 'all' || card.dataset.area === area;
     card.classList.toggle('hidden', !show);
     if(show) count++;
   });
   /* ステータス */
   document.getElementById('filterStatus').textContent =
-    area === 'all'
-      ? '全74社を表示中'
-      : 'Area ' + area + '（' + areaNames[area] + '）— ' + count + '社を表示中';
+    area === 'all' ? '全74社を表示中' :
+    areaLabel[area] + ' - ' + count + '社を表示中';
   /* スクロール */
   if(area !== 'all'){
     setTimeout(function(){
@@ -561,19 +802,17 @@ function filterArea(area){
     }, 80);
   }
 }
-
-/* ══ 初期化（DOMContentLoaded で確実に実行） ══ */
+ 
+/* ── 初期化 ── */
 document.addEventListener('DOMContentLoaded', function(){
   buildCards();
-
-  /* マップエリアのクリック・タッチ */
-  ['A','B','C','D','E','F','G','H','I'].forEach(function(area){
-    var el = document.getElementById('map-' + area);
-    if(!el) return;
-    el.addEventListener('click', function(){ filterArea(area); });
-    el.addEventListener('touchend', function(e){ e.preventDefault(); filterArea(area); });
+ 
+  /* マップエリアのクリック */
+  document.querySelectorAll('.map-area').forEach(function(el){
+    el.addEventListener('click', function(){ filterArea(el.dataset.area); });
+    el.addEventListener('touchend', function(e){ e.preventDefault(); filterArea(el.dataset.area); });
   });
-
+ 
   /* フィルターボタン */
   document.querySelectorAll('.filter-btn').forEach(function(btn){
     btn.addEventListener('click', function(){ filterArea(btn.dataset.area); });
